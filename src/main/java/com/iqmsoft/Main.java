@@ -16,10 +16,10 @@ import static springfox.documentation.builders.PathSelectors.regex;
 
 @SpringBootApplication
 @EnableSwagger2
-public class InventoryAppApplication {
+public class Main {
 
 	public static void main(String[] args) {
-		SpringApplication.run(InventoryAppApplication.class, args);
+		SpringApplication.run(Main.class, args);
 	}
 
 	@Bean

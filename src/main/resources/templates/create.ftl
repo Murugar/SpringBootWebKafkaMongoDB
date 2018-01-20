@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-    <title>Stock System</title>
+    <title>Stock Inventory System</title>
 </head>
     <body>
     <h2>Add Product Inventory</h2>

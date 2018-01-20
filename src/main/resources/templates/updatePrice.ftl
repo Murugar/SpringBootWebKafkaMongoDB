@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-    <title>Simple Stock System</title>
+    <title>Stock Inventory System</title>
 </head>
 <body>
 <h2>Update Price Inventory</h2>

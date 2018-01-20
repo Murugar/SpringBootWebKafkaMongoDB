@@ -1,4 +1,4 @@
-package com.iqmsoft.controller;
+package com.iqmsoft.controller.rest;
 
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +30,6 @@ public class InventoryRestController {
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 500, message = "Failure")})
     public Inventory getInventory(@RequestParam(value = "id", defaultValue = "1") String id) {
-        return repository.findById(id);
+        return repository.findById(id).get();
     }
 }

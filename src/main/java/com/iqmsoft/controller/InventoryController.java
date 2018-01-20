@@ -25,14 +25,14 @@ public class InventoryController {
 
     @RequestMapping(value = "/updateStock", method = RequestMethod.POST)
     public ModelAndView updateStockInventory(@ModelAttribute("id") String id, @ModelAttribute("stock") int stock){
-        int retval = repository.updateStockProduct(id, stock);
+        long retval = repository.updateStockProduct(id, stock);
 
         return new ModelAndView("redirect:/");
     }
 
     @RequestMapping(value = "editStock/{id}", method = RequestMethod.GET)
     public String updateStockInventory(Model model, @PathVariable String id){
-        Inventory inventory = repository.findById(id);
+        Inventory inventory = repository.findById(id).get();
 
         model.addAttribute(inventory);
 
@@ -41,7 +41,7 @@ public class InventoryController {
 
     @RequestMapping(value = "editPrice/{id}", method = RequestMethod.GET)
     public String updatePriceInventory(Model model, @PathVariable String id){
-        Inventory inventory = repository.findById(id);
+        Inventory inventory = repository.findById(id).get();
 
         model.addAttribute(inventory);
 
@@ -71,7 +71,7 @@ public class InventoryController {
 
     @RequestMapping(value = "delete/{id}", method = RequestMethod.GET)
     public ModelAndView deleteProduct(@PathVariable String id){
-        repository.delete(id);
+        repository.deleteById(id);
 
         return new ModelAndView("redirect:/");
     }
